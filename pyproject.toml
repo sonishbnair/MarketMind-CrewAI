@@ -1,0 +1,25 @@
+[project]
+name = "market_update"
+version = "0.1.0"
+description = "market_update using crewAI"
+authors = [{ name = "Sonish Balan", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.100.0,<1.0.0",
+    "duckduckgo-search>=0.1.0",
+    "langchain-community>=0.1.0"
+]
+
+[project.scripts]
+market_update = "market_update.main:run"
+run_crew = "market_update.main:run"
+train = "market_update.main:train"
+replay = "market_update.main:replay"
+test = "market_update.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

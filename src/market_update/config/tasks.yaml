@@ -1,0 +1,41 @@
+research_task:
+  description: >
+    Conduct a thorough research about {stock_symbol}.
+    Use the DuckDuckGo Search tool to find recent news, trends, and company updates from the last 48 hours.
+    Make multiple searches with different queries to gather at least 10 unique news items.
+    You may use variations like "{stock_symbol} stock news", "{stock_symbol} latest news", "{stock_symbol} company updates" etc.
+    Consolidate and deduplicate the results to get the most relevant information.
+  expected_output: >
+    A list with 10 bullet points of the most relevant information about {stock_symbol}, consolidated from multiple searches.
+    Each point should be a concise summary of a news article or update, with no duplicates.
+    Include source and timestamp for each information.
+  agent: researcher
+
+reporting_task:
+  description: >
+    Review the context you got and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information.
+  expected_output: >
+    A fully fledged report with the main topics, each with a full section of information.
+    Formatted as markdown without '```'
+  agent: reporting_analyst
+
+
+# research_task:
+#   description: >
+#     Conduct a thorough research about {stock_symbol}.
+#     Use the DuckDuckGo Search tool to find recent news, trends, and company updates from the last 72 hours.
+#     Simply provide the search query as text, for example: "{stock_symbol} stock news last 3 days".
+#   expected_output: >
+#     A list with 3 bullet points of the most relevant information about {stock_symbol}.
+#     Each point should be a concise summary of a news article or update. Also source of the information
+#   agent: researcher
+
+# reporting_task:
+#   description: >
+#     Review the context you got and expand each topic into a full section for a report.
+#     Make sure the report is detailed and contains any and all relevant information.
+#   expected_output: >
+#     A fully fledged report with the main topics, each with a full section of information.
+#     Formatted as markdown without '```'
+#   agent: reporting_analyst

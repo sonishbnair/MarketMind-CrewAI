@@ -1,0 +1,54 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Log files
+*.log
+crew_run.log
+
+# Generated output files
+output/
+
+# Backup files
+*.back
+*.bak
+*.backup
+
+# Dependency lock files (keep only what you need)
+# If you want to include uv.lock, remove the next line
+uv.lock
+
+# Local configuration files that shouldn't be shared
+*.local.yaml
+*.local.yml
+*.local.json
+
+# User-specific files (if needed for the team)
+# knowledge/user_preference.txt
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.bak
+
+knowledge/

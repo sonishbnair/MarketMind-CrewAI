@@ -138,6 +138,3 @@ You can configure the Slack channel and notification settings in the `src/market
 - Generates detailed reports in Markdown (.md) format in the output directory
 - Includes Slack integration to automatically send generated reports to specified Slack channels
 
-## License
-
-[Your license information here]

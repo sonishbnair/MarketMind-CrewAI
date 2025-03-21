@@ -28,24 +28,7 @@ crewai install
 
 ### 1. Create a Miniconda Environment
 
-```
-brew install --cask miniconda
-```
-
-
-Commands
-
-```
-# Initialize conda (restart terminal after this)
-conda init zsh 
-
-# Create new environment
-conda create -n ai-img-gen-env python=3.10
-conda activate ai-img-gen-env
-
-# Conda list enviorment
-conda env list
-```
+Follow the instructions in this [Evernote link](evernote:///view/48545847/s256/8689b732-542a-97c5-1560-e44299a3e839#1e8ffda4-682f-4f76-85e9-8b92b1045438/65a38f82-b0be-494c-9ee5-73d6ba02f2f8/) to set up your Miniconda environment.
 
 ### 2. Install CrewAI and CrewAI Tools
 
@@ -92,7 +75,7 @@ crewai create crew market_update
 ├── knowledge
 │   └── user_preference.txt
 ├── output
-│   └── reports stored here
+│   └── report_YYYYMMDD_HHMMSS.md  # Generated market analysis reports
 ├── pyproject.toml
 ├── src
 │   └── market_update
@@ -103,7 +86,7 @@ crewai create crew market_update
 │       ├── crew.py
 │       ├── main.py
 │       ├── other_tools
-│       │   └── slack_messenger.py
+│       │   └── slack_messenger.py  # Sends reports to Slack channels
 │       └── tools
 │           ├── __init__.py
 │           ├── custom_tool.py
@@ -136,6 +119,15 @@ Alternatively, you can run the main script directly:
 python -m src.market_update.main <ticker_symbol>
 ```
 
+## Output and Notifications
+
+When your crew completes its analysis, it will:
+
+1. Generate a comprehensive markdown report file in the `output/` directory with a timestamp (e.g., `report_20250227_080240.md`)
+2. Automatically send this report to a specified Slack channel using the `slack_messenger.py` tool
+
+You can configure the Slack channel and notification settings in the `src/market_update/other_tools/slack_messenger.py` file. Make sure to add your Slack API token to the `.env` file for this functionality to work.
+
 ## Features
 
 - Market research agent that gathers comprehensive stock data
@@ -143,3 +135,9 @@ python -m src.market_update.main <ticker_symbol>
 - Option strategy recommendations based on market conditions
 - Configurable agent behaviors and expertise levels
 - Extendable tool system for custom research capabilities
+- Generates detailed reports in Markdown (.md) format in the output directory
+- Includes Slack integration to automatically send generated reports to specified Slack channels
+
+## License
+
+[Your license information here]
